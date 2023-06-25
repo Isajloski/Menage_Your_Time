@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navTask -> {
-                    startActivity(Intent(this, TaskActivity::class.java))
+                    startActivity(Intent(this, ListTasks::class.java))
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navTodo -> {
-                    startActivity(Intent(this, TaskActivity::class.java))
+                    startActivity(Intent(this, MainActivity::class.java))
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navPomodoro -> {
