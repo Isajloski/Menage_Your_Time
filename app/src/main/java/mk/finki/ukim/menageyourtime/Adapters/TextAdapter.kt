@@ -35,6 +35,7 @@ class TextAdapter(var texts: List<TextModel>,     private val recyclerView: Recy
             holder.textView.paintFlags = holder.textView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
         }
 
+
         holder.textView.setOnClickListener {
             notifyItemChanged(position)
             updateText(text)
@@ -47,11 +48,35 @@ class TextAdapter(var texts: List<TextModel>,     private val recyclerView: Recy
         textViewModel.updateText(text)
     }
 
-    fun deleteItem(text: Int) {
+    fun deleteItem(text: TextModel) {
 //        textViewModel.deleteText(text)
+        println(text.text)
     }
 
-
-
     override fun getItemCount() = texts.size
+
+
+    fun enableSwipeToDelete(recyclerView: RecyclerView) {
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                val deletedItem = texts[position]
+
+                textViewModel.deleteItem(deletedItem)
+            }
+
+        }
+
+        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+    }
+
 }

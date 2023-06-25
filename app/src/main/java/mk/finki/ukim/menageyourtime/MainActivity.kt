@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         adapter = TextAdapter(emptyList(), recyclerView, textViewModel)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter.enableSwipeToDelete(recyclerView)
 
 
 

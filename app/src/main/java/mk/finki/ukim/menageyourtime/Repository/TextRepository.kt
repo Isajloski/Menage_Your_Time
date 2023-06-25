@@ -5,6 +5,7 @@ import mk.finki.ukim.menageyourtime.Model.TextDao
 import mk.finki.ukim.menageyourtime.Model.TextModel
 
 class TextRepository(private val textDao: TextDao) {
+
     suspend fun saveText(text: String, isChecked: Boolean) {
         val textModel = TextModel(0, text, isChecked)
         textDao.saveText(textModel)
@@ -15,7 +16,12 @@ class TextRepository(private val textDao: TextDao) {
         textDao.saveText(textModel)
     }
 
-    fun deleteText(text: TextModel) {
+    suspend fun deleteText(text: TextModel) {
+        println("Deleting text:")
+        println("ID: ${text.id}")
+        println("Text: ${text.text}")
+        println("isChecked: ${text.isChecked}")
+
         textDao.deleteText(text)
     }
 

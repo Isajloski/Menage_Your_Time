@@ -24,14 +24,6 @@ class TextViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-//    fun getText(): LiveData<String?> {
-//        val textLiveData = MutableLiveData<String?>()
-//        viewModelScope.launch {
-//            val text = repository.getText()
-//            textLiveData.postValue(text)
-//        }
-//        return textLiveData
-//    }
 
     fun getAllTexts(): LiveData<List<TextModel>> {
         return repository.allTexts
@@ -43,7 +35,8 @@ class TextViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun deleteText(text: TextModel) {
+
+    fun deleteItem(text: TextModel) {
         viewModelScope.launch {
             repository.deleteText(text)
         }
