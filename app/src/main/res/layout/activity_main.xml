@@ -10,33 +10,10 @@
     >
 
 
-
-
-    <EditText
-        android:id="@+id/Title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/title"
-        android:inputType="text"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/Description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/description"
-        android:inputType="text" />
-
-    <Button
-        android:id="@+id/btnAddText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/display"/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="today."
+        android:text="to-do. 🎓"
         android:fontFamily="@font/vollkorn_bold"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -49,5 +26,35 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:ignore="MissingConstraints" />
+
+
+
+    <EditText
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:inputType="text"
+        android:autofillHints=""
+        android:text="name"
+        />
+
+
+    <Button
+        android:id="@+id/btnAddText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/nav_menu"
+    />
+
+
 
 </LinearLayout>

@@ -1,0 +1,122 @@
+<!-- activity_task.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
+    >
+
+
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:imeOptions="actionNext"
+        android:fontFamily="@font/vollkorn_bold"
+
+        />
+
+
+
+        <Button
+            android:id="@+id/dateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Date"
+            android:layout_below="@+id/titleEditText"
+            android:fontFamily="@font/vollkorn_bold" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/titleEditText"
+        android:layout_marginTop="8dp"
+        android:id="@+id/time1"
+        android:gravity="center_vertical"
+        >
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateButton"
+        android:layout_marginTop="8dp"
+        android:text="Select Time"
+        android:fontFamily="@font/vollkorn_bold"
+        />
+
+
+
+    <Spinner
+        android:id="@+id/reminderSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeButton"
+        android:layout_marginTop="8dp"
+        android:entries="@array/reminder_options"
+        android:padding="8dp"
+        android:fontFamily="@font/vollkorn_bold"
+        />
+
+
+    <Spinner
+        android:id="@+id/repeatSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminderSpinner"
+        android:layout_marginTop="8dp"
+        android:entries="@array/repeat_options"
+        android:padding="8dp"
+        android:fontFamily="@font/vollkorn_bold"
+        />
+
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/repeatSpinner"
+        android:layout_marginTop="8dp"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:gravity="top"
+        android:hint="Add note"
+        android:fontFamily="@font/vollkorn_bold"
+
+        />
+
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionEditText"
+        android:layout_marginTop="16dp"
+        android:text="Add"
+
+        android:fontFamily="@font/vollkorn_bold"
+        />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addButton"
+        android:layout_marginTop="16dp"
+        android:text="Delete"
+        android:fontFamily="@font/vollkorn_bold"
+        />
+
+
+</RelativeLayout>
