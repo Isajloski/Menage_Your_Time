@@ -2,6 +2,7 @@ package mk.finki.ukim.menageyourtime.Model
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import java.util.*
 
 @Dao
 interface TaskDao {
@@ -17,6 +18,9 @@ interface TaskDao {
 
     @Delete
     suspend fun delete(task: Task)
+
+    @Query("SELECT * FROM tasks WHERE date = :date")
+    fun findTasksByDate(date: String): LiveData<List<Task>>
 
     // Add other necessary methods for querying, etc.
 }

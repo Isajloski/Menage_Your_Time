@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import mk.finki.ukim.menageyourtime.Model.Task
 import mk.finki.ukim.menageyourtime.Model.TaskDatabase
 import mk.finki.ukim.menageyourtime.Repository.TaskRepository
+import java.util.*
 
 
 class TaskViewModel(application: Application) : AndroidViewModel(application) {
@@ -35,6 +36,15 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
             repository.delete(task)
         }
     }
+
+    fun findTaskByDate(date: String): LiveData<List<Task>> {
+        return repository.findTasksByDate(date)
+    }
+
+
+//    fun findTaskByDate(threeDaysBeforeToday: Date) {
+//        return repository.findTaskByDate(threeDaysBeforeToday)
+//    }
 
     val allTasks: LiveData<List<Task>> = repository.allTasks
 }

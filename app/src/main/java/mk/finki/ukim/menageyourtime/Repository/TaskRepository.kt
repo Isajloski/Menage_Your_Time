@@ -3,6 +3,8 @@ package mk.finki.ukim.menageyourtime.Repository
 import androidx.lifecycle.LiveData
 import mk.finki.ukim.menageyourtime.Model.Task
 import mk.finki.ukim.menageyourtime.Model.TaskDao
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TaskRepository(private val taskDao: TaskDao) {
 
@@ -19,4 +21,9 @@ class TaskRepository(private val taskDao: TaskDao) {
     suspend fun delete(task: Task) {
         taskDao.delete(task)
     }
+
+    fun findTasksByDate(date: String): LiveData<List<Task>> {
+        return taskDao.findTasksByDate(date)
+    }
+
 }

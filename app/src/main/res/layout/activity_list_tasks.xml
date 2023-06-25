@@ -1,23 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="15dp"
     tools:context=".ListTasks">
 
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
-    <TextView
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="23"
+            android:textSize="30px" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTasks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
+        android:layout_below="@id/buttons"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="66dp"
+
+        android:src="@drawable/add"
+        app:backgroundTint="@color/white" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/vollkorn_bold"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:text="tasks. 🎓"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/nav_menu" />
 
 
-</LinearLayout>
+
+</RelativeLayout>
