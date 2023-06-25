@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navTodo"
-        android:icon="@drawable/todo"
+        android:icon="@mipmap/todo_foreground"
         android:title="To-do" />
 
     <item
         android:id="@+id/navTask"
-        android:icon="@drawable/task"
+        android:icon="@mipmap/tasks_foreground"
         android:title="Task" />
 
     <item
         android:id="@+id/navPomodoro"
-        android:icon="@drawable/checked_black"
+        android:icon="@mipmap/pomodoro_foreground"
         android:title="Pomodoro" />
 
     <item
         android:id="@+id/navStatistics"
-        android:icon="@drawable/unchecked_black"
+        android:icon="@mipmap/statistics_foreground"
         android:title="Statistics" />
 
 

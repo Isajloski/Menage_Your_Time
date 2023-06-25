@@ -18,9 +18,9 @@ class TextViewModel(application: Application) : AndroidViewModel(application) {
         repository = TextRepository(textDao)
     }
 
-    fun saveText(text: String) {
+    fun saveText(text: String, isChecked: Boolean) {
         viewModelScope.launch {
-            repository.saveText(text)
+            repository.saveText(text, isChecked )
         }
     }
 
@@ -35,6 +35,18 @@ class TextViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getAllTexts(): LiveData<List<TextModel>> {
         return repository.allTexts
+    }
+
+    fun updateText(text: TextModel) {
+        viewModelScope.launch {
+             repository.updateText(text)
+        }
+    }
+
+    fun deleteText(text: TextModel) {
+        viewModelScope.launch {
+            repository.deleteText(text)
+        }
     }
 }
 

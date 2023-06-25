@@ -46,28 +46,6 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//
-//        var textViewModel = ViewModelProvider(this).get(TextViewModel::class.java)
-//
-//        val title = findViewById<EditText>(R.id.Title)
-//        val displayText = findViewById<TextView>(R.id.DisplayText)
-//        val buttonSave = findViewById<Button>(R.id.btnAddText)
-//
-//        buttonSave.setOnClickListener {
-//            val text = title.text.toString()
-//            textViewModel.saveText(text)
-//
-//        }
-//
-//
-//        textViewModel.getAllTexts().observe(this, { texts ->
-//            val allTexts = texts.joinToString("\n")
-//            displayText.text = allTexts
-//        })
-//    }
-
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -81,14 +59,17 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<EditText>(R.id.Title)
         val buttonSave = findViewById<Button>(R.id.btnAddText)
 
+
         recyclerView = findViewById(R.id.recycler_view)
-        adapter = TextAdapter(emptyList())
+        adapter = TextAdapter(emptyList(), recyclerView, textViewModel)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
         buttonSave.setOnClickListener {
             val text = editText.text.toString()
-            textViewModel.saveText(text)
+            textViewModel.saveText(text, false)
             editText.text.clear()
         }
 

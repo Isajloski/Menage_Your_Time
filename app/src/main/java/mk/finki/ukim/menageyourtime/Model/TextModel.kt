@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class TextModel(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val text: String
+    val text: String,
+    var isChecked: Boolean
 )
