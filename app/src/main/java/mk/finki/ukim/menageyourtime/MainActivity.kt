@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navPomodoro -> {
-                    startActivity(Intent(this, TaskActivity::class.java))
+                    startActivity(Intent(this, PomodoroActivity::class.java))
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navStatistics -> {

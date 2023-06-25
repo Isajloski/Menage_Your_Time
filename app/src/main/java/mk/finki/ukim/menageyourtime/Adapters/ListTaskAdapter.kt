@@ -1,5 +1,6 @@
 package mk.finki.ukim.menageyourtime.Adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mk.finki.ukim.menageyourtime.Model.Task
 import mk.finki.ukim.menageyourtime.R
+import mk.finki.ukim.menageyourtime.TaskUpdate
 
 class ListTaskAdapter(var tasks: List<Task>) : RecyclerView.Adapter<ListTaskAdapter.TaskViewHolder>() {
 
@@ -19,6 +21,20 @@ class ListTaskAdapter(var tasks: List<Task>) : RecyclerView.Adapter<ListTaskAdap
         val currentTask = tasks[position]
         // Bind the task data to the ViewHolder views
         holder.bindTask(currentTask)
+
+        holder.itemView.setOnClickListener{
+            val context = holder.itemView.context
+            val intent = Intent(context, TaskUpdate::class.java)
+            intent.putExtra("id", currentTask.id)
+            intent.putExtra("time", currentTask.time)
+            intent.putExtra("date", currentTask.date)
+            intent.putExtra("description", currentTask.description)
+            intent.putExtra("title", currentTask.title)
+            intent.putExtra("reminder", currentTask.reminder)
+            intent.putExtra("repeat", currentTask.repeat)
+            intent.putExtra("task", currentTask)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = tasks.size

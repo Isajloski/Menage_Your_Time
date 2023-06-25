@@ -3,6 +3,7 @@ package mk.finki.ukim.menageyourtime
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -38,6 +39,10 @@ class TaskActivity : AppCompatActivity() {
             taskAdapter.submitList(tasks)
         })
 
+
+        val deleteButton: Button = findViewById(R.id.deleteButton)
+        deleteButton.visibility = View.GONE
+
         val addButton: Button = findViewById(R.id.addButton)
         addButton.setOnClickListener {
             val titleEditText: EditText = findViewById(R.id.titleEditText)
@@ -57,12 +62,15 @@ class TaskActivity : AppCompatActivity() {
             val title = titleEditText.text.toString()
             val description = descriptionEditText.text.toString()
 
+
+
+
             if (title.isNotBlank() && selectedTime != null) {
                 val reminder = reminderSpinner.selectedItem.toString()
                 val selectedReminder = getSelectedReminder(reminder)
                 val repeat = repeatSpinner.selectedItem.toString()
                 val selectedRepeat = getSelectedRepeat(repeat)
-                
+
                 if (selectedReminder != null) {
                     val task = Task(
                         title,
