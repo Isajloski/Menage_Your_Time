@@ -4,41 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/focus"
+    android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical">
 
-
     <TextView
+        android:id="@+id/timerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="24\n59"
         android:textSize="100dp"
-        android:lineSpacingExtra="-30dp"
         android:textColor="@color/pomodoroNumbers"
-    />
+        android:text="25\n00"/>
+
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAUSE"
+        android:layout_marginBottom="10dp" />
 
     <Button
         android:layout_width="wrap_content"
+        android:id="@+id/restart"
         android:layout_height="wrap_content"
-        android:text="Button 1"
-        android:layout_marginBottom="10dp"/>
+        android:text="RESTART"
+        android:layout_marginBottom="10dp" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Content of the main section goes here -->
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button 2"
-        android:layout_marginBottom="10dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button 3"
-        android:layout_marginBottom="10dp"/>
-
-
-
+        app:menu="@menu/nav_menu" />
 
 </LinearLayout>
